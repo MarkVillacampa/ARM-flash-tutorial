@@ -6,7 +6,7 @@ This is intended to be a comprehensive example on how to flash an ARM-based boar
 
 The board used in this tutorial features an ARM Cortex-M3 microcontroller manufactued by STMicroelectronics (STM). The microcontroller model is from the STM32F1 family. The exact model name is STM32F103RBT6.
 
-The board itself is manufactured by a chinese company specialized in prototyping boards called [LC Studio]([Link to the board page]). This or a similar board can be acquired on Ebay for about $10-$20 ([Ebay search for STM32F103R]).
+The board itself is manufactured by a chinese company specialized in prototyping boards called [LC Studio](http://www.lctech-inc.com/Hardware/Detail.aspx?id=91891ab7-5724-4526-abfa-958df9ce571f). This or a similar board can be acquired on Ebay for about $10-$20 ([Ebay search for STM32F103R](http://www.ebay.com/sch/i.html?_trksid=p2050601.m570.l1313.TR0.TRC0.X++STM32F103R&_nkw=++STM32F103R&_sacat=0&_from=R40)).
 
 Under the `docs` folder you can find the datasheet of the microcontroller and the schematics of the board.
 
@@ -22,7 +22,7 @@ Download the installation tarball for Mac or OSX from the following link:
 
 OpenOCD is the flasher tool we're going to use to send the compiled binary to our JTAG programmer, which in turn will flash it to our ARM board.
 
-The easiest way to get it on OSX is through Homebrew. See how to get Homebrew [here]. Then run `brew install openocd` to get the flasher.
+The easiest way to get it on OSX is through Homebrew. See how to get Homebrew [here](http://brew.sh). Then run `brew install openocd` to get the flasher.
 
 ## Compiling the code
 
@@ -45,7 +45,7 @@ To compile the code you will need to add the compiler to your PATH (change the p
 
 We're ready to compile. Go to the `src` directory and type `make`. If everything went right you should have a `main_rom.elf` file inside the `src` directory.
 
-NOTE: In the unlikely case that you dont have `make` installed, install Xcode on your Mac or type `sudo apt-get install build-essential` on Ubuntu.
+NOTE: In the unlikely case that you don't have `make` installed, install Xcode on your Mac or type `sudo apt-get install build-essential` on Ubuntu.
 
 ## Preparing OpenOCD
 
@@ -53,7 +53,7 @@ To actually transfer your program to the board through JTAG, you will need an ex
 
 OpenOCD is responsible for talking to this hardware programmer, which it calls "interface", and make it flash your board.
 
-To do this, OpenOCD uses the `flash.cfg` file located inside the `src``directory. Let's take a look at this file.
+To do this, OpenOCD uses the `flash.cfg` file located inside the `src` directory. Let's take a look at this file.
 
 First we're going to declare the interface we're going to use. In this case we select the Buspirate interface. Sometimes the interface requires further configuration, like specifying the serial port in which it is connected.
 
