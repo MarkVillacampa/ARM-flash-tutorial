@@ -80,7 +80,7 @@ flash write_image main_rom.elf
 
 Every board is different and exposes different features through various interfaces. However there are some things common to almost all boards. In the photo below you can see the relevant parts of the board we're going to learn about.
 
-![](img)
+![](docs/STM32F103RBT6.jpg)
 
 - Power Select: the board can be powered through USB or directly from the JTAG programmer. For some reason I couldn't power it from JTAG so I did it through USB. These headers let us select the power mode. In the position of the image it powers from USB, and from JTAG in the other position.
 
@@ -92,7 +92,7 @@ Every board is different and exposes different features through various interfac
 
 - Boot Select: Our board can operate in three modes, which we can select setting the BOOT0 and BOOT1 jumpers appropiately. As in the photo above, both BOOT0 and BOOT1 and in low or 0 position.
 
-![](img)
+![](docs/boot_select.png)
 
 To flash the board, we have to select system memory boot (BOOT0 = 1, BOOT1 = 0). To run your program we have to select user memory (BOOT0 = 0, BOOT1 = 0).
 
@@ -100,7 +100,7 @@ To flash the board, we have to select system memory boot (BOOT0 = 1, BOOT1 = 0).
 
 We're going to wire our programmer to the board. In our board, the layout of the JTAG pins is as follows (Note the orientation due to the lateral opening):
 
-![](img)
+![](docs/jtag.png)
 
 This is the mapping between Buspirate and JTAG pins:
 
