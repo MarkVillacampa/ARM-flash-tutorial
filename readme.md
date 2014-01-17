@@ -18,7 +18,7 @@ The compiler is a special version of GCC maintained by ARM employees. There are 
 
 Download the installation tarball for Mac or OSX from the following link:
 
-[https://launchpad.net/gcc-arm-embedded/+download]
+[https://launchpad.net/gcc-arm-embedded/+download](https://launchpad.net/gcc-arm-embedded/+download)
 
 OpenOCD is the flasher tool we're going to use to send the compiled binary to our JTAG programmer, which in turn will flash it to our ARM board.
 
@@ -33,7 +33,7 @@ This example is by Mindaugas from the [ScienceProg Blog](http://www.scienceprog.
 Let me explain what the important files inside `src` do:
 
 | Path | Desription |
-| - | - |
+| ---- | ---------- |
 | main.c | This is where the `main()` function is defined, and is the main code of our program |
 | Libraries/CMSIS/ | CMSIS is a library by ARM that standarizes access to certain hardware interfaces across different ARM microcontrollers |
 | Libraries/STM32F10x_StdPeriph_Driver/ | The ST "Standard Peripheral Library" is a library that further simplifies the interface provided to the programmer for STM32 microcontrollers. |
@@ -43,13 +43,13 @@ To compile the code you will need to add the compiler to your PATH (change the p
 
 `export PATH=$PATH: /path/to/the/compiler/gcc-arm-none-eabi-4_8-2013q4/bin`
 
-We're ready to compile. Go to the `src``directory and type `make`. If everything went right you should have a `main_rom.elf` file inside the `src` directory.
+We're ready to compile. Go to the `src` directory and type `make`. If everything went right you should have a `main_rom.elf` file inside the `src` directory.
 
 NOTE: In the unlikely case that you dont have `make` installed, install Xcode on your Mac or type `sudo apt-get install build-essential` on Ubuntu.
 
 ## Preparing OpenOCD
 
-To actually transfer your program to the board through JTAG, you will need an external piece of hardware, a JTAG programmer. In this example I'm going to use a [Buspirate](http://dangerousprototypes.com/docs/Bus_Pirate), but you can use any programmer supported by OpenOCD. You can find a list of supported interfaces [here].
+To actually transfer your program to the board through JTAG, you will need an external piece of hardware, a JTAG programmer. In this example I'm going to use a [Buspirate](http://dangerousprototypes.com/docs/Bus_Pirate), but you can use any programmer supported by OpenOCD. You can find a list of supported interfaces [here](http://openocd.sourceforge.net/doc/html/Debug-Adapter-Configuration.html).
 
 OpenOCD is responsible for talking to this hardware programmer, which it calls "interface", and make it flash your board.
 
